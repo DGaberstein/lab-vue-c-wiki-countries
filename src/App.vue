@@ -10,6 +10,10 @@ export default {
 };
 </script>
 
+<script setup>
+import NavBar from "./components/NavBar.vue";
+</script>
+
 <style scoped>
 a {
   color: #42b983;
