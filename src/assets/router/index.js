@@ -3,21 +3,19 @@ import CountriesList from "../components/CountriesList.vue";
 import CountryDetails from "../components/CountryDetails.vue";
 
 const routes = [
-  {
-    path: "/",
-    name: "list",
-    component: CountriesList,
-    component: () => import("../components/CountriesList.vue"),
-    children: [
-      {
-        path: "list/:alpha3Code",
-        name: "country-details",
-        component: CountryDetails,
-        component: () => import("../components/CountryDetails.vue"),
-      },
-    ],
-  },
-];
+    {
+      path: "/",
+      name: "list",
+      component: () => import("../components/CountriesList.vue"),
+      children: [
+        {
+          path: "list/:alpha3Code",
+          name: "country-details",
+          component: () => import("../components/CountryDetails.vue"),
+        },
+      ],
+    },
+  ];
 
 const router = createRouter({
   history: createWebHistory("/"),
